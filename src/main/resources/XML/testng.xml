@@ -2,7 +2,7 @@
 
 <suite thread-count="1" name="Gmail Suite" parallel="tests">
          
-  <test name="flipkart">
+  <test name="Search">
 	 <classes>
 	   <class name="com.automation.tests.GoogleSearch"/>
 	 </classes>
