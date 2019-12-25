@@ -20,6 +20,7 @@ public class GoogleSearch extends CommonBrowserFunctions {
 			openBrowser("CHROME");
 			navigateToURL(Constants.getProperty("URL"));
 			search();
+			hover();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -28,6 +29,11 @@ public class GoogleSearch extends CommonBrowserFunctions {
 	public void search() {
 		GoogleHomePage objGoogleHomePage = new GoogleHomePage(getDriver());
 		objGoogleHomePage.searchAText();
+	}
+	
+	public void hover() {
+		GoogleHomePage objGoogleHomePage = new GoogleHomePage(getDriver());
+		objGoogleHomePage.hoverOnThirdElement();
 	}
 
 }

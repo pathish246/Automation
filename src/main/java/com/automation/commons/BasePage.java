@@ -5,12 +5,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
@@ -129,5 +132,37 @@ public class BasePage {
 			System.out.println("Exception Highlighing Element");
 		}
 	}
+	
+	/*
+	 * Below Method is used to hover on a particlar element 
+	 */
+	
+	public void hoverOnElement(WebDriver driver,WebElement element, String SuccessMessage, String FailureMessage) {
+		try {
+			fluentWait(driver,element);
+			highlightElement(driver,element);
+			Actions objActions = new Actions(driver);
+			objActions.moveToElement(element).perform();
+			System.out.println(SuccessMessage);
+		} catch (Exception e) {
+			Assert.fail(FailureMessage);
+		}
+	}
+	
+	public boolean switchToWindow(String Title) {
+		Set<String> windows = driver.getWindowHandles();
+		String windowTitle = "";
+		boolean switched = false;
+		for(String window : windows) {
+			driver.switchTo().window(window);
+			windowTitle = driver.getTitle();
+			if(windowTitle.equalsIgnoreCase(Title)) {
+				switched = true;
+				break;
+			}
+		}
+		return switched;
+	}
+	
 
 }
