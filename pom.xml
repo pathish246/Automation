@@ -7,37 +7,35 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-  	<jre.level>1.8</jre.level>
-  	<jdk.level>1.8</jdk.level>
-   </properties>
-   <build>
-  	<plugins>
-     	<!-- Compiler plug-in -->
-     	<plugin>
-        	<groupId>org.apache.maven.plugins</groupId>
-        	<artifactId>maven-compiler-plugin</artifactId>
-        	<version>3.5.1</version>
-        	<configuration>
-           	<source>${jdk.level}</source>
-           	<target>${jdk.level}</target>
-        	</configuration>
-     	</plugin>
-     	<!-- Added Surefire Plugin configuration to execute tests -->
-     	<plugin>
-        	<groupId>org.apache.maven.plugins</groupId>
-        	<artifactId>maven-surefire-plugin</artifactId>
-        	<version>2.19.1</version>
-        	<configuration>
-           	<suiteXmlFiles>
-          	<suiteXmlFile>src\main\resources\XML\testng.xml</suiteXmlFile>
-           	</suiteXmlFiles>
-           	<systemPropertyVariables>
-              	<browserName>firefox</browserName>
-           	</systemPropertyVariables>
-        	</configuration>
-     	</plugin>
-  	</plugins>
-   </build>
+		<jre.level>1.8</jre.level>
+		<jdk.level>1.8</jdk.level>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<build>
+		<plugins>
+			<!-- Compiler plug-in -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>${jdk.level}</source>
+					<target>${jdk.level}</target>
+				</configuration>
+			</plugin>
+			<!-- Added Surefire Plugin configuration to execute tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>src\main\resources\XML\testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 
@@ -75,6 +73,24 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.11-beta2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<!-- <dependency> -->
+		<!-- <groupId>log4j</groupId> -->
+		<!-- <artifactId>log4j</artifactId> -->
+		<!-- <version>1.2.17</version> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.4</version>
 		</dependency>
 
 

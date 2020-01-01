@@ -20,10 +20,6 @@ public class GoogleHomePage extends BasePage {
 	@FindBy(xpath = "(//li[contains(@class,'sbct') and contains(@jsaction,'click')])[3]")
 	WebElement lbl_SearchResultThirdIndex;
 	
-	
-	
-	
-	
 	public GoogleHomePage(WebDriver driver) {
 		super(driver);
 		GoogleHomePage.driver = driver;
@@ -33,7 +29,6 @@ public class GoogleHomePage extends BasePage {
 	public void searchAText() {
 		String searchWord = Constants.getProperty("SearchWord");
 		setElement(driver,textbox_Search,searchWord, "Success :- Entered Search Word as "+searchWord, "Failed :- Unable to enter search word");
-		hoverOnThirdElement();
 		clickOnElement(driver,btn_GoogleSearch, "Success :- Clicked on Google Search", "Failed :- Unable to Click on Google Search");
 	}
 	

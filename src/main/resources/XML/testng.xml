@@ -2,7 +2,13 @@
 
 <suite thread-count="1" name="Gmail Suite" parallel="tests">
          
-  <test name="Search">
+<!--   <test name="Google"> -->
+<!-- 	 <classes> -->
+<!-- 	   <class name="com.automation.testdatamanagment.FetchData"/> -->
+<!-- 	 </classes> -->
+<!--    </test> -->
+
+<test name="Google"> -->
 	 <classes>
 	   <class name="com.automation.tests.GoogleSearch"/>
 	 </classes>

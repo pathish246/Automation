@@ -55,7 +55,7 @@ public class CommonBrowserFunctions extends BasePage {
 	}
 
 	public void navigateToURL(String URL) {
-		System.out.println("Navigating To URL "+URL);
+		logger.debug("Navigating To URL "+URL);
 		driver.get(URL);
 	}
 	
